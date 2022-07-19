@@ -42,10 +42,12 @@
 
 // if (OfficeStatus::APPROVAL_PENDING == $reservation->status) echo 'en attente !';
 
-use Class\OfficeReservation;
+// use Class\OfficeReservation;
+
+use Class\CoffeeMachine;
+use Class\PremiumCoffeeMachine;
 
 require '../vendor/autoload.php';
 
-var_dump(OfficeReservation::getInstance());
-var_dump(OfficeReservation::getInstance());
-var_dump(OfficeReservation::getInstance());
+$premiumCoffeeMachine = new PremiumCoffeeMachine(1);
+$premiumCoffeeMachine->select('vanilla');
