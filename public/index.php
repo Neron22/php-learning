@@ -25,15 +25,23 @@
 //   }
 // });
 
+// use \Class\Paypal\Payment as paymentPaypal;
+// use \Class\Stripe\Payment;
+// use \Colors\RandomColor;
+
+// $paymentPaypal = new paymentPaypal();
+// $paymentStripe = new Payment();
+
+// var_dump($paymentPaypal, $paymentStripe);
+
+// var_dump(RandomColor::one());
+
+use Class\OfficeReservation;
+use Class\Enums\OfficeStatus;
+
 require '../vendor/autoload.php';
 
-use \Class\Paypal\Payment as paymentPaypal;
-use \Class\Stripe\Payment;
-use \Colors\RandomColor;
 
-$paymentPaypal = new paymentPaypal();
-$paymentStripe = new Payment();
+$reservation = new OfficeReservation();
 
-var_dump($paymentPaypal, $paymentStripe);
-
-var_dump(RandomColor::one());
+if (OfficeStatus::APPROVAL_PENDING == $reservation->status) echo 'en attente !';
