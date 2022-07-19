@@ -36,12 +36,16 @@
 
 // var_dump(RandomColor::one());
 
+// use Class\Enums\OfficeStatus;
+
+// $reservation = new OfficeReservation();
+
+// if (OfficeStatus::APPROVAL_PENDING == $reservation->status) echo 'en attente !';
+
 use Class\OfficeReservation;
-use Class\Enums\OfficeStatus;
 
 require '../vendor/autoload.php';
 
-
-$reservation = new OfficeReservation();
-
-if (OfficeStatus::APPROVAL_PENDING == $reservation->status) echo 'en attente !';
+var_dump(OfficeReservation::getInstance());
+var_dump(OfficeReservation::getInstance());
+var_dump(OfficeReservation::getInstance());
