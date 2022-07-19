@@ -2,14 +2,21 @@
 
 namespace Class;
 
-use Class\Enums\OfficeStatus;
-
 class OfficeReservation
 {
-  public OfficeStatus $status;
+  private static ?self $_instance = null;
 
-  public function __construct()
+  private function __construct(
+    )
+    {
+      echo 'Nouvelle instance !';
+    }
+
+  public static function getInstance(): self
   {
-    $this->status = OfficeStatus::APPROVAL_PENDING;
+    if (is_null(self::$_instance)) {
+      self::$_instance = new self;
+    }
+    return self::$_instance;
   }
 }
