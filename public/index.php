@@ -42,10 +42,11 @@
 
 // if (OfficeStatus::APPROVAL_PENDING == $reservation->status) echo 'en attente !';
 
-use Class\OfficeReservation;
+// use Class\OfficeReservation;
+
+use Class\Peugeot;
 
 require '../vendor/autoload.php';
 
-var_dump(OfficeReservation::getInstance());
-var_dump(OfficeReservation::getInstance());
-var_dump(OfficeReservation::getInstance());
+$peugeot = new Peugeot('peugeot');
+var_dump($peugeot->rouler(), $peugeot->marque());
