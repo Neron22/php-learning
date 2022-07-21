@@ -49,16 +49,26 @@
 // $peugeot = new Peugeot('peugeot');
 // var_dump($peugeot->rouler(), $peugeot->marque());
 
-use Class\BasicPDF;
-use Class\PremiumPDF;
-use Class\PDFDownloaderService;
+// use Class\BasicPDF;
+// use Class\PremiumPDF;
+// use Class\PDFDownloaderService;
+// // $basicPDF = new BasicPDF();
+// $premiumPDF = new PremiumPDF();
+// // var_dump($basicPDF->downloadPDF());
+
+// $PDFDownloaderService = new PDFDownloaderService();
+// var_dump($PDFDownloaderService->downloadPDF($premiumPDF));
 
 require '../vendor/autoload.php';
 
 
-// $basicPDF = new BasicPDF();
-$premiumPDF = new PremiumPDF();
-// var_dump($basicPDF->downloadPDF());
+use Class\EspressoMachine;
+use Class\IrishCoffeeMachine;
 
-$PDFDownloaderService = new PDFDownloaderService();
-var_dump($PDFDownloaderService->downloadPDF($premiumPDF));
+$espresso = new EspressoMachine();
+$irishCoffee = new IrishCoffeeMachine();
+
+var_dump(
+  $espresso->makeEspresso(),
+  $irishCoffee->makeIrishCoffee()
+);
