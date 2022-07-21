@@ -44,9 +44,21 @@
 
 // use Class\OfficeReservation;
 
-use Class\Peugeot;
+// use Class\Peugeot;
+
+// $peugeot = new Peugeot('peugeot');
+// var_dump($peugeot->rouler(), $peugeot->marque());
+
+use Class\BasicPDF;
+use Class\PremiumPDF;
+use Class\PDFDownloaderService;
 
 require '../vendor/autoload.php';
 
-$peugeot = new Peugeot('peugeot');
-var_dump($peugeot->rouler(), $peugeot->marque());
+
+// $basicPDF = new BasicPDF();
+$premiumPDF = new PremiumPDF();
+// var_dump($basicPDF->downloadPDF());
+
+$PDFDownloaderService = new PDFDownloaderService();
+var_dump($PDFDownloaderService->downloadPDF($premiumPDF));
