@@ -59,18 +59,32 @@
 // $PDFDownloaderService = new PDFDownloaderService();
 // var_dump($PDFDownloaderService->downloadPDF($premiumPDF));
 
+// use Class\EspressoMachine;
+// use Class\IrishCoffeeMachine;
+
+// $espresso = new EspressoMachine();
+// $irishCoffee = new IrishCoffeeMachine();
+
+// var_dump(
+//   $espresso->makeEspresso(),
+//   $irishCoffee->makeIrishCoffee(),
+//   $espresso->makeCoffee(),
+//   $irishCoffee->makeCoffee()
+// );
+
+use Class\Exceptions\UserIsBanException;
+use Class\Exceptions\UserNotVerifiedException;
+use Class\Login;
+use Class\User;
+
 require '../vendor/autoload.php';
 
 
-use Class\EspressoMachine;
-use Class\IrishCoffeeMachine;
+$user = new User('val', 'password');
+$login = new Login($user);
 
-$espresso = new EspressoMachine();
-$irishCoffee = new IrishCoffeeMachine();
-
-var_dump(
-  $espresso->makeEspresso(),
-  $irishCoffee->makeIrishCoffee(),
-  $espresso->makeCoffee(),
-  $irishCoffee->makeCoffee()
-);
+try {
+  $login->login();
+} catch (\Exception $e) {
+  echo $e->getMessage() . ' dans le fichier ' . $e->getFile() . ', à la ligne :' . $e->getLine();
+}
