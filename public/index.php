@@ -70,5 +70,7 @@ $irishCoffee = new IrishCoffeeMachine();
 
 var_dump(
   $espresso->makeEspresso(),
-  $irishCoffee->makeIrishCoffee()
+  $irishCoffee->makeIrishCoffee(),
+  $espresso->makeCoffee(),
+  $irishCoffee->makeCoffee()
 );
