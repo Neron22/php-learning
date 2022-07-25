@@ -2,10 +2,9 @@
 
 namespace Class;
 
+use Class\Traits\EspressoTrait;
+
 class EspressoMachine extends CoffeeMaker
 {
-  public function makeEspresso(): string
-  {
-    return static::class . ' fait un espresso.';
-  }
+  use EspressoTrait;
 }

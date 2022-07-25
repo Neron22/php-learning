@@ -2,10 +2,9 @@
 
 namespace Class;
 
+use Class\Traits\IrishCoffeeTrait;
+
 class IrishCoffeeMachine extends CoffeeMaker
 {
-  public function makeIrishCoffee(): string
-  {
-    return static::class . ' fait un Irish coffee.';
-  }
+  use IrishCoffeeTrait;
 }
