@@ -72,19 +72,20 @@
 //   $irishCoffee->makeCoffee()
 // );
 
-use Class\Exceptions\UserIsBanException;
-use Class\Exceptions\UserNotVerifiedException;
-use Class\Login;
-use Class\User;
+// use Class\Exceptions\UserIsBanException;
+// use Class\Exceptions\UserNotVerifiedException;
+// use Class\Login;
+// use Class\User;
+
+// $user = new User('val', 'password');
+// $login = new Login($user);
+
+// try {
+//   $login->login();
+// } catch (\Exception $e) {
+//   echo $e->getMessage() . ' dans le fichier ' . $e->getFile() . ', à la ligne :' . $e->getLine();
+// }
 
 require '../vendor/autoload.php';
 
-
-$user = new User('val', 'password');
-$login = new Login($user);
-
-try {
-  $login->login();
-} catch (\Exception $e) {
-  echo $e->getMessage() . ' dans le fichier ' . $e->getFile() . ', à la ligne :' . $e->getLine();
-}
+echo "HomePage";
